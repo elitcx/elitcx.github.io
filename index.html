@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="js/javascript.js" defer></script>
+</head>
+<body class="bg-neutral-950">
+    <header>
+        
+    </header>
+
+    <main>
+        <div id="todo-container" class="border-2 border-solid border-white rounded-xl w-xl mx-auto p-10 shadow-lg shadow-purple-500/50 bg-white">
+            <h1 class="font-bold text-3xl text-center mt-10">To Do List - Kiel</h1>
+            <section>
+            <form class="flex gap-4 mb-4 mt-5 justify-center">
+                <input class="border p-2 rounded" type="text" id="todo-task" placeholder="Add a new task" />
+                <input class="border p-2 rounded" type="date" id="todo-date"/>
+                <button class=" p-2 rounded bg-green-400" type="button" id="todo-add" onclick="addTask(event)">Add Task</button>
+            </form>
+        </section>
+        <section class="max-w-xl mx-auto">
+            <!-- Add this container so renderTasks() has somewhere to render -->
+            <table class="my-5 table-fixed w-full border-collapse text-center bg-indigo-400 rounded-lg" id="todo-table">
+                <thead class="py-5 h-10">
+                    <th class="w-fit">Task</th>
+                    <th class="w-fit">Due date</th>
+                    <th class="w-fit">Status</th>
+                    <th class="w-fit">Action</th>
+                </thead>
+                
+                <tbody id="todo-list" class="py-5 h-10">
+                    <tr>
+                        <td class="px-4 py-6 text-white" colspan="4">No tasks — add one above.</td>
+                    </tr>
+                    <!-- Tasks will be rendered here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="flex gap-4 justify-center my-4">
+                <button type="button" class="border p-2 rounded bg-red-400 text-white" id="todo-clear" onclick="clearTasks()">Clear all Tasks</button>
+                <button type="button" class="border p-2 rounded bg-blue-400 text-white" id="todo-filter" onclick = "filterTasks()">Filter Tasks</button>
+        </section>
+        </div>
+        
+
+        
+    </main>
+
+    <footer>
+        <p class="text-center mt-4 text-white">© 2024 To Do List App</p>
+    </footer>
+</body>
+</html>
